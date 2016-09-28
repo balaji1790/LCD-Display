@@ -1,13 +1,13 @@
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.13.1/lodash.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0-rc.2/angular-animate.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-  <script src="javascript/utils.js"></script>
-  <script src="javascript/angularScript.js"></script>
-  <link rel="stylesheet" href="stylesheet/cinemaEntry.css">
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script src="javascript/utils.js"></script>
+<script src="javascript/angularScript.js"></script>
+<link rel="stylesheet" href="stylesheet/cinemaEntry.css">
 
 
 
@@ -16,70 +16,74 @@
 <body>
     <div class="content">
 
-    <header>
+        <header>
 
         </header>
 
-  <br>
-     <div id="myCarousel" class="carousel slide" data-ride="carousel">
-<div class="carousel-inner" role="listbox"ng-app="myApp" ng-controller="myCtrl">
+        <br>
+        <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="10000">
+            <div class="carousel-inner" role="listbox"ng-app="myApp" ng-controller="myCtrl">
 
-<div class="item active">
-   <div class="left-margin"></div>
-   <div class="movie-image"><img src="http://d1f7f1axn40slq.cloudfront.net/d267d0a6-ec53-40ce-9e20-b834740e5656?w=513"></div>
-    <div class="after-image"></div>
-    <div class="movie-header">
+                <div class="item active">
 
-			<div class="arrow-spacer"></div>
-			<div class="screen-name">{{screen}}</div>
-   </div>
-    <div class="name-spacer"></div>
-                <div class="movie-content">Movie<br><div class="movie_next_font">{{title}}{{certifiate1}}</div></div>
-		<div></div>
+                    <div class="movie-image"><img ng-src="https://img.spicinemas.in/resources/images/movies/{{img}}/455x672.jpg">
+                    </div>
+                    <div class="content_area">
+                        <div class="movie-header">
+                            <span class="screen-name">{{screen}}</span>
+                        </div>
+                        <div class="movie-content">Movie
+                            <br>
+                            <span class="movie_next_font">
+                                {{title}}({{certifiate1}})
+                            </span>
+                        </div>
+                        <div class="movie-content">NOW-SHOWING<br>
+                            <span class="movie_next_font">{{time|date : "shortTime"}}
+                            </span>
+                        </div>    
+                    </div>
 
-                <div class="nextshow-spacer"></div>
-                <div class="movie-content">NEXT-SHOW<br><div class="movie_next_font">{{time|date : "shortTime"}}</div></div>
-		<div></div>
+                </div>
 
-</div>
+                <div class="item">
 
-<div class="item">
-    <div class="a">
-     <div class="left-margin"></div>
-   <div class="movie-image"><img src="http://d1f7f1axn40slq.cloudfront.net/d267d0a6-ec53-40ce-9e20-b834740e5656?w=513"></div>
-    <div class="after-image"></div>
-    <div class="movie-header">
+                    <div class="movie-image"><img ng-src="https://img.spicinemas.in/resources/images/movies/{{img1}}/455x672.jpg">
+                    </div>
+                    <div class="content_area">
+                        <div class="movie-header">
+                            <span class="screen-name">{{screen1}}</span>
+                        </div>
+                        <div class="movie-content">Movie
+                            <br>
+                            <span class="movie_next_font">
+                                {{title1}}({{certifiate1}})
+                            </span>
+                        </div>
+                        <div class="movie-content">NEXT-SHOW<br>
+                            <span class="movie_next_font">{{time1|date : "shortTime"}}
+                            </span>
+                        </div>    
+                    </div>
 
-			<div class="arrow-spacer"></div>
-			<div class="screen-name">{{screen1}}</div>
-   </div>
-    <div class="name-spacer"></div>
-                <div class="movie-content">Movie<br><div class="movie_next_font">{{title1}}{{certifiate1}}</div></div>
-		<div></div>
-
-                <div class="nextshow-spacer"></div>
-                <div class="movie-content">NEXT-SHOW<br><div class="movie_next_font">{{time1|date : "shortTime"}}</div></div>
-		<div></div>
-    </div>
-
-</div>
-
-
-
-
-
-
+                </div>
 
 
 
 
 
-<footer>
 
-        </footer>
-    </div>
 
-</div>
+
+
+
+
+                <footer>
+
+                </footer>
+            </div>
+
+        </div>
     </div>
 
 </body>

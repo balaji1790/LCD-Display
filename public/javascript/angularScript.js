@@ -4,7 +4,7 @@ app.controller('myCtrl', function($scope, $http) {
 
 
     // $http.get("https://www.spicinemas.in/chennai/show-times").then(function(response) {
-    $http.get("http://0.0.0.0:8000/public/sample.json").then(function(response) {
+    $http.get("https://www.spicinemas.in/chennai/show-times").then(function(response) {
 
 
         $scope.CurrentDate = new Date();
@@ -21,18 +21,20 @@ app.controller('myCtrl', function($scope, $http) {
         //document.write(x[0]["screenName"]);
         //document.write(x[0]["movie"]["certification"]);
         var refinedList = refineShowtime(x);
-        console.log(nowShowing(refinedList))
+        console.log((nowShowing(refinedList)["movie"]["sluggedMovieName"]))
         $scope.title = (nowShowing(refinedList)["movie"]["name"]);
         $scope.screen = (nowShowing(refinedList)["screenName"]);
         $scope.certifiate = (nowShowing(refinedList)["movie"]["certification"]);
         $scope.time = (nowShowing(refinedList)["sessionDetailsList"]["sessionTiming"]);
         $scope.avail = (nowShowing(refinedList)["sessionDetailsList"]["availability"]["ELITE"]);
+        $scope.img = (nowShowing(refinedList)["movie"]["sluggedMovieName"]);
 
         $scope.title1 = (nextMovie(refinedList)["movie"]["name"]);
         $scope.screen1 = (nextMovie(refinedList)["screenName"]);
         $scope.certifiate1 = (nextMovie(refinedList)["movie"]["certification"]);
         $scope.time1 = (nextMovie(refinedList)["sessionDetailsList"]["sessionTiming"]);
         $scope.avail1 = (nextMovie(refinedList)["sessionDetailsList"]["availability"]["ELITE"]);
+        $scope.img1 = (nextMovie(refinedList)["movie"]["sluggedMovieName"]);
 
 
         // var a = JSON.stringify(x);

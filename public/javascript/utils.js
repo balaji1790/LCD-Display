@@ -1,12 +1,12 @@
 function refineShowtime(list) {
-    var result = []
-    for (var movie of list) {
-        for (var session of movie.sessionDetailsList) {
+    var result = [];
+    list.forEach(function(movie) {
+        movie.sessionDetailsList.forEach(function(session) {
             var sessionObject = clone(movie);
             sessionObject.sessionDetailsList = session;
             result.push(sessionObject);
-        };
-    };
+        });
+    });
     return result.sort(function(a, b) {
         return a.sessionDetailsList.showNumbers - b.sessionDetailsList.showNumbers;
     });
