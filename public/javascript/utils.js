@@ -21,6 +21,5 @@ function nowShowing(list) {
 };
 
 function nextMovie(list) {
-    return list[1];
+    return list[1] || list[0];
 };
-exports.refineShowtime = refineShowtime;

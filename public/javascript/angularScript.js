@@ -1,27 +1,27 @@
 var app = angular.module('myApp', []);
 
 app.controller('myCtrl', function($scope, $http) {
+    
+   $http.get('config/configjson.json').success(function(data) {
+                    
+                      var screenm=data.confi.screenName;
+                      $scope.imgurl=data.confi.imgapi;
+                      $scope.imgsize=data.confi.imgsize;
 
-
-    // $http.get("https://www.spicinemas.in/chennai/show-times").then(function(response) {
     $http.get("https://www.spicinemas.in/chennai/show-times").then(function(response) {
 
 
         $scope.CurrentDate = new Date();
 
-        // var a = JSON.stringify(response);
+         // var a = JSON.stringify(response);
         // document.write(a);
+        
+     
 
-        console.log(response.data)
 
-        var x = filter(response.data.screenSchedules, "WEAVE");
-
-        //document.write(x[0]["movie"]["name"]);
-        //document.write(x[0]["movie"]["synopsis"]);
-        //document.write(x[0]["screenName"]);
-        //document.write(x[0]["movie"]["certification"]);
+        var x = filter(response.data.screenSchedules, screenm);
         var refinedList = refineShowtime(x);
-        console.log((nowShowing(refinedList)["movie"]["sluggedMovieName"]))
+       
         $scope.title = (nowShowing(refinedList)["movie"]["name"]);
         $scope.screen = (nowShowing(refinedList)["screenName"]);
         $scope.certifiate = (nowShowing(refinedList)["movie"]["certification"]);
@@ -37,18 +37,6 @@ app.controller('myCtrl', function($scope, $http) {
         $scope.img1 = (nextMovie(refinedList)["movie"]["sluggedMovieName"]);
 
 
-        // var a = JSON.stringify(x);
-        // document.write(a);
-
-        // var jsonArg1 = new Object();
-        //jsonArg1.
-
-
-
-
-        //var b= JSON.stringify(show_numbers);
-
-        //document.write(b);
 
 
 
@@ -59,9 +47,11 @@ app.controller('myCtrl', function($scope, $http) {
 
 
     });
+    
 
 
 });
+});  
 
 function filter(screenSchedules, screenName) {
     return _.filter(screenSchedules, {

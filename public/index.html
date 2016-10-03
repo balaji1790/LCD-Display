@@ -5,6 +5,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0-rc.2/angular-animate.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script id="configjson" type="application/json" src="config/configjson.json"></script>
 <script src="javascript/utils.js"></script>
 <script src="javascript/angularScript.js"></script>
 <link rel="stylesheet" href="stylesheet/cinemaEntry.css">
@@ -26,7 +27,7 @@
 
                 <div class="item active">
 
-                    <div class="movie-image"><img ng-src="https://img.spicinemas.in/resources/images/movies/{{img}}/455x672.jpg">
+                    <div class="movie-image"><img ng-src="{{imgurl}}{{img}}{{imgsize}}">
                     </div>
                     <div class="content_area">
                         <div class="movie-header">
@@ -48,7 +49,7 @@
 
                 <div class="item">
 
-                    <div class="movie-image"><img ng-src="https://img.spicinemas.in/resources/images/movies/{{img1}}/455x672.jpg">
+                    <div class="movie-image"><img ng-src="{{imgurl}}{{img1}}{{imgsize}}">
                     </div>
                     <div class="content_area">
                         <div class="movie-header">

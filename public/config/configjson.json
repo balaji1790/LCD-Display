@@ -1,0 +1,12 @@
+
+{
+"confi":{
+    "apiurl":"https://www.spicinemas.in/chennai/show-times",
+    
+    "imgapi":"https://img.spicinemas.in/resources/images/movies/",
+    
+    "imgsize":"/455x672.jpg",
+    
+    "screenName":"STREAK"
+}
+}
